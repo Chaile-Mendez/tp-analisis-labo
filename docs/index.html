@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TP Análisis de Datos · FCE UBA</title>
+  <meta name="description" content="Presentación del trabajo práctico de análisis de datos — FCE UBA.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2314294d'/><rect x='7' y='17' width='4' height='8' rx='1' fill='%23e3a72f'/><rect x='14' y='11' width='4' height='14' rx='1' fill='%23fff'/><rect x='21' y='7' width='4' height='18' rx='1' fill='%23fff'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       Cada <section class="slide"> es una diapositiva.
+       - data-section: nombre que aparece en el pie.
+       - class "slide--dark": fondo oscuro (portada, separadores, cierre).
+       - class "reveal" + style="--i:n": animación escalonada al entrar.
+       ============================================================ -->
+
+  <main class="viewport" aria-live="polite">
+    <div class="deck" id="deck">
+
+      <!-- 01 · Portada -->
+      <section class="slide slide--dark slide--cover" data-section="Portada">
+        <div class="cover__grid" aria-hidden="true"></div>
+        <svg class="cover__chart" viewBox="0 0 600 300" aria-hidden="true">
+          <polyline points="0,250 80,220 160,232 240,170 320,185 400,120 480,135 600,40" />
+          <polyline class="alt" points="0,280 80,265 160,270 240,240 320,250 400,210 480,215 600,170" />
+          <circle cx="600" cy="40" r="6" />
+        </svg>
+
+        <div class="cover__content">
+          <p class="kicker reveal" style="--i:0">Trabajo Práctico · Análisis de Datos · 2026</p>
+          <h1 class="cover__title reveal" style="--i:1">Título del análisis<br><em>en dos líneas</em></h1>
+          <p class="cover__subtitle reveal" style="--i:2">Subtítulo breve que resume la pregunta que responde el trabajo.</p>
+
+          <ul class="team reveal" style="--i:3">
+            <li><span class="avatar">A</span>Integrante Uno</li>
+            <li><span class="avatar">B</span>Integrante Dos</li>
+            <li><span class="avatar">C</span>Integrante Tres</li>
+            <li><span class="avatar">D</span>Integrante Cuatro</li>
+          </ul>
+        </div>
+
+        <footer class="cover__footer reveal" style="--i:4">
+          <span>Facultad de Ciencias Económicas · UBA</span>
+          <span>Materia · Cátedra · Comisión</span>
+        </footer>
+      </section>
+
+      <!-- 02 · Agenda -->
+      <section class="slide" data-section="Agenda">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0">Agenda</p>
+          <h2 class="reveal" style="--i:1">Recorrido de la presentación</h2>
+        </header>
+        <ol class="agenda">
+          <li class="reveal" style="--i:2"><span>01</span><div><strong>Contexto</strong><small>Problema y pregunta de investigación</small></div></li>
+          <li class="reveal" style="--i:3"><span>02</span><div><strong>Datos</strong><small>Fuentes, alcance y calidad</small></div></li>
+          <li class="reveal" style="--i:4"><span>03</span><div><strong>Metodología</strong><small>Del dato crudo al hallazgo</small></div></li>
+          <li class="reveal" style="--i:5"><span>04</span><div><strong>Resultados</strong><small>Indicadores y visualizaciones clave</small></div></li>
+          <li class="reveal" style="--i:6"><span>05</span><div><strong>Discusión</strong><small>Comparaciones y limitaciones</small></div></li>
+          <li class="reveal" style="--i:7"><span>06</span><div><strong>Conclusiones</strong><small>Respuestas y próximos pasos</small></div></li>
+        </ol>
+      </section>
+
+      <!-- 03 · Contexto -->
+      <section class="slide" data-section="Contexto">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0">01 · Contexto</p>
+          <h2 class="reveal" style="--i:1">¿Qué queremos responder?</h2>
+        </header>
+        <div class="split split--wide-left">
+          <blockquote class="question reveal" style="--i:2">
+            Pregunta de investigación principal, formulada en una sola oración clara y medible.
+          </blockquote>
+          <ul class="objectives">
+            <li class="reveal" style="--i:3"><b>Objetivo 1</b> Describir el fenómeno a partir de los datos disponibles.</li>
+            <li class="reveal" style="--i:4"><b>Objetivo 2</b> Identificar patrones, tendencias o diferencias entre grupos.</li>
+            <li class="reveal" style="--i:5"><b>Objetivo 3</b> Evaluar relaciones entre variables relevantes.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 04 · Datos -->
+      <section class="slide" data-section="Datos">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0">02 · Datos</p>
+          <h2 class="reveal" style="--i:1">Fuentes utilizadas</h2>
+        </header>
+        <div class="cards">
+          <article class="card reveal" style="--i:2">
+            <span class="badge">CSV</span>
+            <h3>nombre_dataset_1</h3>
+            <p>Fuente · organismo o sitio de origen</p>
+            <dl>
+              <div><dt>Filas</dt><dd>—</dd></div>
+              <div><dt>Columnas</dt><dd>—</dd></div>
+              <div><dt>Período</dt><dd>—</dd></div>
+            </dl>
+          </article>
+          <article class="card reveal" style="--i:3">
+            <span class="badge badge--alt">XLSX</span>
+            <h3>nombre_dataset_2</h3>
+            <p>Fuente · organismo o sitio de origen</p>
+            <dl>
+              <div><dt>Filas</dt><dd>—</dd></div>
+              <div><dt>Columnas</dt><dd>—</dd></div>
+              <div><dt>Período</dt><dd>—</dd></div>
+            </dl>
+          </article>
+          <article class="card reveal" style="--i:4">
+            <span class="badge">CSV</span>
+            <h3>nombre_dataset_3</h3>
+            <p>Fuente · organismo o sitio de origen</p>
+            <dl>
+              <div><dt>Filas</dt><dd>—</dd></div>
+              <div><dt>Columnas</dt><dd>—</dd></div>
+              <div><dt>Período</dt><dd>—</dd></div>
+            </dl>
+          </article>
+        </div>
+        <p class="note reveal" style="--i:5">Nota sobre calidad de datos: valores faltantes, outliers o decisiones de limpieza relevantes.</p>
+      </section>
+
+      <!-- 05 · Metodología -->
+      <section class="slide" data-section="Metodología">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0">03 · Metodología</p>
+          <h2 class="reveal" style="--i:1">Del dato crudo al hallazgo</h2>
+        </header>
+        <ol class="pipeline">
+          <li class="reveal" style="--i:2"><span class="step">1</span><h3>Carga</h3><p>Lectura de CSV/XLSX y unificación de formatos.</p></li>
+          <li class="reveal" style="--i:3"><span class="step">2</span><h3>Limpieza</h3><p>Tipos, faltantes, duplicados y valores atípicos.</p></li>
+          <li class="reveal" style="--i:4"><span class="step">3</span><h3>Exploración</h3><p>Estadística descriptiva y visualización.</p></li>
+          <li class="reveal" style="--i:5"><span class="step">4</span><h3>Análisis</h3><p>Comparaciones, correlaciones o modelos.</p></li>
+        </ol>
+        <p class="tools reveal" style="--i:6">
+          <span>Python</span><span>pandas</span><span>NumPy</span><span>matplotlib</span><span>seaborn</span><span>Jupyter</span>
+        </p>
+      </section>
+
+      <!-- 06 · Separador -->
+      <section class="slide slide--dark slide--divider" data-section="Resultados">
+        <span class="divider__number reveal" style="--i:0">04</span>
+        <div>
+          <p class="kicker reveal" style="--i:1">Sección</p>
+          <h2 class="reveal" style="--i:2">Resultados</h2>
+          <p class="reveal" style="--i:3">Lo que nos dicen los datos.</p>
+        </div>
+      </section>
+
+      <!-- 07 · KPIs -->
+      <section class="slide" data-section="Resultados">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0">04 · Resultados</p>
+          <h2 class="reveal" style="--i:1">Indicadores principales</h2>
+        </header>
+        <div class="kpis">
+          <div class="kpi reveal" style="--i:2"><span class="kpi__value">00<small>%</small></span><span class="kpi__label">Indicador uno</span><span class="kpi__delta up">▲ 0,0 pp vs. período base</span></div>
+          <div class="kpi reveal" style="--i:3"><span class="kpi__value">0,0<small>M</small></span><span class="kpi__label">Indicador dos</span><span class="kpi__delta down">▼ 0,0 % interanual</span></div>
+          <div class="kpi reveal" style="--i:4"><span class="kpi__value">000</span><span class="kpi__label">Indicador tres</span><span class="kpi__delta">Sin variación relevante</span></div>
+          <div class="kpi reveal" style="--i:5"><span class="kpi__value">0,00</span><span class="kpi__label">Indicador cuatro</span><span class="kpi__delta up">▲ correlación positiva</span></div>
+        </div>
+      </section>
+
+      <!-- 08 · Gráfico + lectura -->
+      <section class="slide" data-section="Resultados">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0">04 · Resultados</p>
+          <h2 class="reveal" style="--i:1">Título que enuncia el hallazgo, no el gráfico</h2>
+        </header>
+        <div class="split split--wide-left">
+          <figure class="figure reveal" style="--i:2">
+            <!-- Reemplazar por: <img src="assets/img/figura_01.png" alt="Descripción del gráfico"> -->
+            <div class="figure__placeholder">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg>
+              <span>Insertar figura<br><code>assets/img/figura_01.png</code></span>
+            </div>
+            <figcaption>Figura 1 · Descripción breve. Fuente: elaboración propia en base a …</figcaption>
+          </figure>
+          <aside class="takeaways">
+            <h3 class="reveal" style="--i:3">Lectura</h3>
+            <ul>
+              <li class="reveal" style="--i:4">Primer hallazgo, con el dato que lo sostiene.</li>
+              <li class="reveal" style="--i:5">Segundo hallazgo o matiz importante.</li>
+              <li class="reveal" style="--i:6">Implicancia para la pregunta de investigación.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- 09 · Comparación -->
+      <section class="slide" data-section="Discusión">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0">05 · Discusión</p>
+          <h2 class="reveal" style="--i:1">Comparación entre grupos</h2>
+        </header>
+        <div class="compare">
+          <div class="compare__col reveal" style="--i:2">
+            <h3>Grupo A</h3>
+            <ul><li>Característica observada</li><li>Valor medio / mediana</li><li>Tendencia principal</li></ul>
+          </div>
+          <span class="compare__vs reveal" style="--i:3">vs.</span>
+          <div class="compare__col compare__col--alt reveal" style="--i:4">
+            <h3>Grupo B</h3>
+            <ul><li>Característica observada</li><li>Valor medio / mediana</li><li>Tendencia principal</li></ul>
+          </div>
+        </div>
+        <p class="note reveal" style="--i:5"><b>Limitaciones:</b> alcance temporal, representatividad de la muestra, variables no observadas.</p>
+      </section>
+
+      <!-- 10 · Conclusiones -->
+      <section class="slide" data-section="Conclusiones">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0">06 · Conclusiones</p>
+          <h2 class="reveal" style="--i:1">Qué aprendimos</h2>
+        </header>
+        <div class="split">
+          <ol class="conclusions">
+            <li class="reveal" style="--i:2">Conclusión principal que responde a la pregunta.</li>
+            <li class="reveal" style="--i:3">Conclusión secundaria basada en la evidencia.</li>
+            <li class="reveal" style="--i:4">Conclusión sobre el alcance o la robustez.</li>
+          </ol>
+          <div class="next reveal" style="--i:5">
+            <h3>Próximos pasos</h3>
+            <ul>
+              <li>Ampliar el período de análisis</li>
+              <li>Incorporar nuevas fuentes</li>
+              <li>Profundizar con modelos</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 · Cierre -->
+      <section class="slide slide--dark slide--end" data-section="Cierre">
+        <div class="cover__grid" aria-hidden="true"></div>
+        <p class="kicker reveal" style="--i:0">Muchas gracias</p>
+        <h2 class="reveal" style="--i:1">¿Preguntas?</h2>
+        <p class="end__links reveal" style="--i:2">
+          <a href="https://github.com/chaile-mendez/tp-analisis-labo" target="_blank" rel="noopener">github.com/chaile-mendez/tp-analisis-labo</a>
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Interfaz de navegación -->
+  <div class="hud" aria-hidden="false">
+    <div class="progress"><span id="progress-bar"></span></div>
+    <div class="hud__bar">
+      <span class="hud__brand">FCE · UBA <i>—</i> <span id="hud-section">Portada</span></span>
+      <nav class="hud__nav" aria-label="Navegación de diapositivas">
+        <button id="prev" type="button" aria-label="Anterior">
+          <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <span class="hud__counter"><b id="current">01</b> / <span id="total">00</span></span>
+        <button id="next" type="button" aria-label="Siguiente">
+          <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+        <button id="fullscreen" type="button" aria-label="Pantalla completa" title="Pantalla completa (F)">
+          <svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+        </button>
+      </nav>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
