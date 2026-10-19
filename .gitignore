@@ -1,0 +1,39 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# --- Entorno / IDE ---
+.env
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Datos ---
+# Los datasets crudos SÍ se versionan (son la fuente del TP).
+# Los intermedios pesados se regeneran desde los notebooks.
+data/processed/*.parquet
+data/processed/*.pkl
+!**/.gitkeep
+
+# --- LaTeX (archivos auxiliares) ---
+informe/**/*.aux
+informe/**/*.log
+informe/**/*.out
+informe/**/*.toc
+informe/**/*.lof
+informe/**/*.lot
+informe/**/*.bbl
+informe/**/*.blg
+informe/**/*.bcf
+informe/**/*.run.xml
+informe/**/*.fls
+informe/**/*.fdb_latexmk
+informe/**/*.synctex.gz
+informe/**/*.nav
+informe/**/*.snm
