@@ -64,3 +64,5 @@ Deploy: en GitHub ir a **Settings → Pages → Source: GitHub Actions**. Cada p
 que modifique `docs/` publica la presentación automáticamente.
 
 Atajos: `→` / `Espacio` avanzar · `←` retroceder · `Inicio` / `Fin` · `F` pantalla completa · `P` exportar a PDF (imprimir).
+
+Esto una demostración --
