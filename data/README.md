@@ -21,7 +21,7 @@ raw/bcra_tipo_cambio.xlsx
 
 | Archivo | Fuente | Descripción | Período | Filas × Cols | Responsable |
 |---|---|---|---|---|---|
-| _pendiente_ | | | | | |
+| Human Development Index - Full.csv | https://www.kaggle.com/datasets/iamsouravbanerjee/human-development-index-dataset| IDH por pais| 2021| 195 x 3| Chaile Juan|
 
 ## Archivos grandes
 
