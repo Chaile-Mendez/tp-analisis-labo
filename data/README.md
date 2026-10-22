@@ -19,9 +19,11 @@ raw/bcra_tipo_cambio.xlsx
 
 > Completar una fila por cada archivo que se agregue a `raw/`.
 
-| Archivo | Fuente | Descripción | Período | Filas × Cols | Responsable |
-|---|---|---|---|---|---|
-| Human Development Index - Full.csv | https://www.kaggle.com/datasets/iamsouravbanerjee/human-development-index-dataset| IDH por pais| 2021| 195 x 3| Chaile Juan|
+| Archivo | Fuente | Descripción | Período | Filas × Cols |
+|---|---|---|---|---|
+| Human Development Index - Full.csv | https://www.kaggle.com/datasets/iamsouravbanerjee/human-development-index-dataset| IDH por pais| 2021| 195 x 3|
+| Social_media_impact_on_life.csv | https://www.kaggle.com/datasets/...| Impacto de las redes sociales| ----| 1706 x 11|
+| Students Social Media Addiction.csv | https://www.kaggle.com/datasets/...| Adiccion a las redes sociales| ----| 706 x 13| 
 
 ## Archivos grandes
 
