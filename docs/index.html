@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TP Análisis de Datos · FCE UBA</title>
-  <meta name="description" content="Presentación del trabajo práctico de análisis de datos — FCE UBA.">
+  <title>Redes sociales y estudiantes · FCE UBA</title>
+  <meta name="description" content="Presentación del trabajo práctico: impacto del uso de redes sociales en el sueño, el rendimiento académico y la salud mental de estudiantes — Laboratorio de Métodos Cuantitativos Aplicados a la Gestión, FCE UBA.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2314294d'/><rect x='7' y='17' width='4' height='8' rx='1' fill='%23e3a72f'/><rect x='14' y='11' width='4' height='14' rx='1' fill='%23fff'/><rect x='21' y='7' width='4' height='18' rx='1' fill='%23fff'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,9 @@
        Cada <section class="slide"> es una diapositiva.
        - data-section: nombre que aparece en el pie.
        - class "slide--dark": fondo oscuro (portada, separadores, cierre).
+       - class "slide--dense": encabezado compacto para slides con figura + tabla.
        - class "reveal" + style="--i:n": animación escalonada al entrar.
+       Figuras: exportadas de los notebooks en /notebooks → assets/img/.
        ============================================================ -->
 
   <main class="viewport" aria-live="polite">
@@ -27,27 +29,26 @@
       <section class="slide slide--dark slide--cover" data-section="Portada">
         <div class="cover__grid" aria-hidden="true"></div>
         <svg class="cover__chart" viewBox="0 0 600 300" aria-hidden="true">
-          <polyline points="0,250 80,220 160,232 240,170 320,185 400,120 480,135 600,40" />
-          <polyline class="alt" points="0,280 80,265 160,270 240,240 320,250 400,210 480,215 600,170" />
-          <circle cx="600" cy="40" r="6" />
+          <polyline points="0,40 80,70 160,62 240,120 320,108 400,170 480,160 600,250" />
+          <polyline class="alt" points="0,170 80,180 160,176 240,205 320,200 400,232 480,228 600,270" />
+          <circle cx="600" cy="250" r="6" />
         </svg>
 
         <div class="cover__content">
           <p class="kicker reveal" style="--i:0">Trabajo Práctico · Análisis de Datos · 2026</p>
-          <h1 class="cover__title reveal" style="--i:1">Título del análisis<br><em>en dos líneas</em></h1>
-          <p class="cover__subtitle reveal" style="--i:2">Subtítulo breve que resume la pregunta que responde el trabajo.</p>
+          <h1 class="cover__title reveal" style="--i:1">Redes sociales y estudiantes:<br><em>¿cuánto cuesta conectarse?</em></h1>
+          <p class="cover__subtitle reveal" style="--i:2">Impacto del uso de redes sociales sobre el sueño, el rendimiento académico y la salud mental de 1.038 estudiantes de 110 países.</p>
 
           <ul class="team reveal" style="--i:3">
-            <li><span class="avatar">A</span>Integrante Uno</li>
-            <li><span class="avatar">B</span>Integrante Dos</li>
-            <li><span class="avatar">C</span>Integrante Tres</li>
-            <li><span class="avatar">D</span>Integrante Cuatro</li>
+            <li><span class="avatar">J</span>Juan</li>
+            <li><span class="avatar">J</span>Joaquín</li>
+            <li><span class="avatar">M</span>Mateo</li>
           </ul>
         </div>
 
         <footer class="cover__footer reveal" style="--i:4">
           <span>Facultad de Ciencias Económicas · UBA</span>
-          <span>Materia · Cátedra · Comisión</span>
+          <span>Laboratorio de Métodos Cuantitativos Aplicados a la Gestión</span>
         </footer>
       </section>
 
@@ -58,185 +59,472 @@
           <h2 class="reveal" style="--i:1">Recorrido de la presentación</h2>
         </header>
         <ol class="agenda">
-          <li class="reveal" style="--i:2"><span>01</span><div><strong>Contexto</strong><small>Problema y pregunta de investigación</small></div></li>
-          <li class="reveal" style="--i:3"><span>02</span><div><strong>Datos</strong><small>Fuentes, alcance y calidad</small></div></li>
-          <li class="reveal" style="--i:4"><span>03</span><div><strong>Metodología</strong><small>Del dato crudo al hallazgo</small></div></li>
-          <li class="reveal" style="--i:5"><span>04</span><div><strong>Resultados</strong><small>Indicadores y visualizaciones clave</small></div></li>
-          <li class="reveal" style="--i:6"><span>05</span><div><strong>Discusión</strong><small>Comparaciones y limitaciones</small></div></li>
-          <li class="reveal" style="--i:7"><span>06</span><div><strong>Conclusiones</strong><small>Respuestas y próximos pasos</small></div></li>
+          <li class="reveal" style="--i:2"><span>01</span><div><strong>Introducción</strong><small>Problema, pregunta general y cuatro preguntas específicas</small></div></li>
+          <li class="reveal" style="--i:3"><span>02</span><div><strong>Datos y método</strong><small>Fuente, calidad de datos y transformaciones</small></div></li>
+          <li class="reveal" style="--i:4"><span>03</span><div><strong>Argumentos</strong><small>P1 sueño · P2 rendimiento · P3 edad y desarrollo · P4 plataforma y género</small></div></li>
+          <li class="reveal" style="--i:5"><span>04</span><div><strong>Discusión</strong><small>Síntesis, robustez y limitaciones</small></div></li>
+          <li class="reveal" style="--i:6"><span>05</span><div><strong>Conclusiones</strong><small>Respuestas a las preguntas y próximos pasos</small></div></li>
+          <li class="reveal" style="--i:7"><span>06</span><div><strong>Preguntas</strong><small>Intercambio con el auditorio</small></div></li>
         </ol>
       </section>
 
-      <!-- 03 · Contexto -->
-      <section class="slide" data-section="Contexto">
+      <!-- 03 · Introducción -->
+      <section class="slide slide--dense" data-section="Introducción">
         <header class="slide__header">
-          <p class="eyebrow reveal" style="--i:0">01 · Contexto</p>
-          <h2 class="reveal" style="--i:1">¿Qué queremos responder?</h2>
+          <p class="eyebrow reveal" style="--i:0">01 · Introducción</p>
+          <h2 class="reveal" style="--i:1">Las redes sociales son parte de la vida estudiantil, pero ¿a qué costo?</h2>
         </header>
-        <div class="split split--wide-left">
-          <blockquote class="question reveal" style="--i:2">
-            Pregunta de investigación principal, formulada en una sola oración clara y medible.
-          </blockquote>
-          <ul class="objectives">
-            <li class="reveal" style="--i:3"><b>Objetivo 1</b> Describir el fenómeno a partir de los datos disponibles.</li>
-            <li class="reveal" style="--i:4"><b>Objetivo 2</b> Identificar patrones, tendencias o diferencias entre grupos.</li>
-            <li class="reveal" style="--i:5"><b>Objetivo 3</b> Evaluar relaciones entre variables relevantes.</li>
+        <div class="split" style="gap:44px">
+          <div>
+            <blockquote class="question reveal" style="--i:2; font-size:28px">
+              ¿Cuál es el impacto del uso de redes sociales en la calidad de vida de los estudiantes, y es igual para todos?
+            </blockquote>
+            <p class="reveal" style="--i:3; margin-top:26px; font-size:16px; line-height:1.55; color:var(--ink-soft)">
+              El tiempo frente a pantallas suele asociarse a peor descanso y a menor bienestar. Hablar de “redes sociales” en general, sin embargo, puede ocultar que su efecto varía según <b style="color:var(--ink)">quién</b> las usa, <b style="color:var(--ink)">dónde</b> vive y <b style="color:var(--ink)">qué plataforma</b> elige. Medimos el impacto con cuatro indicadores: horas de uso, horas de sueño, salud mental y afectación académica percibida.
+            </p>
+          </div>
+          <ul class="qgrid">
+            <li class="reveal" style="--i:3"><span>P1 · Sueño</span>¿El uso de redes sociales se asocia con menos horas de sueño?</li>
+            <li class="reveal" style="--i:4"><span>P2 · Rendimiento</span>¿Quienes declaran un rendimiento académico afectado usan más redes y duermen menos?</li>
+            <li class="reveal" style="--i:5"><span>P3 · Edad y desarrollo</span>¿El impacto difiere según la edad y el nivel de desarrollo del país?</li>
+            <li class="reveal" style="--i:6"><span>P4 · Plataforma y género</span>¿Hay redes que impactan más que otras? ¿Existe una brecha de género?</li>
           </ul>
         </div>
       </section>
 
       <!-- 04 · Datos -->
-      <section class="slide" data-section="Datos">
+      <section class="slide slide--dense" data-section="Datos y método">
         <header class="slide__header">
-          <p class="eyebrow reveal" style="--i:0">02 · Datos</p>
-          <h2 class="reveal" style="--i:1">Fuentes utilizadas</h2>
+          <p class="eyebrow reveal" style="--i:0">02 · Datos y método</p>
+          <h2 class="reveal" style="--i:1">Una base de 1.743 registros que, auditada, son 1.038 estudiantes</h2>
         </header>
         <div class="cards">
           <article class="card reveal" style="--i:2">
-            <span class="badge">CSV</span>
-            <h3>nombre_dataset_1</h3>
-            <p>Fuente · organismo o sitio de origen</p>
+            <span class="badge">CSV · Kaggle</span>
+            <h3>dataset_final</h3>
+            <p>Unión de <i>Social Media Impact on Life</i> y <i>Students Social Media Addiction</i>. Encuesta transversal a estudiantes de secundario, grado y posgrado.</p>
             <dl>
-              <div><dt>Filas</dt><dd>—</dd></div>
-              <div><dt>Columnas</dt><dd>—</dd></div>
-              <div><dt>Período</dt><dd>—</dd></div>
+              <div><dt>Filas</dt><dd>1.743</dd></div>
+              <div><dt>Columnas</dt><dd>11</dd></div>
+              <div><dt>Países</dt><dd>110</dd></div>
             </dl>
           </article>
           <article class="card reveal" style="--i:3">
-            <span class="badge badge--alt">XLSX</span>
-            <h3>nombre_dataset_2</h3>
-            <p>Fuente · organismo o sitio de origen</p>
+            <span class="badge badge--alt">Calidad</span>
+            <h3>Auditoría de datos</h3>
+            <p><code>Relationship_Status</code> es la única columna con faltantes. Al ignorarla aparecen filas idénticas: el mismo estudiante cargado en ambas fuentes.</p>
             <dl>
-              <div><dt>Filas</dt><dd>—</dd></div>
-              <div><dt>Columnas</dt><dd>—</dd></div>
-              <div><dt>Período</dt><dd>—</dd></div>
+              <div><dt>Nulos</dt><dd>59,6%</dd></div>
+              <div><dt>Duplicados</dt><dd>705</dd></div>
+              <div><dt>Únicos</dt><dd>1.038</dd></div>
             </dl>
           </article>
           <article class="card reveal" style="--i:4">
-            <span class="badge">CSV</span>
-            <h3>nombre_dataset_3</h3>
-            <p>Fuente · organismo o sitio de origen</p>
-            <dl>
-              <div><dt>Filas</dt><dd>—</dd></div>
-              <div><dt>Columnas</dt><dd>—</dd></div>
-              <div><dt>Período</dt><dd>—</dd></div>
-            </dl>
+            <span class="badge">Variables</span>
+            <h3>Indicadores de impacto</h3>
+            <ul>
+              <li><code>Avg_Daily_Usage_Hours</code> · uso diario (1,5–8,5 h)</li>
+              <li><code>Sleep_Hours_Per_Night</code> · sueño (3,8–9,6 h)</li>
+              <li><code>Mental_Health_Score</code> · salud mental (4–9; <b>más alto = mejor</b>)</li>
+              <li><code>Affects_Academic_Performance</code> · afectación académica percibida (Sí/No)</li>
+              <li>Edad 18–24 · género · país · plataforma más usada</li>
+            </ul>
           </article>
         </div>
-        <p class="note reveal" style="--i:5">Nota sobre calidad de datos: valores faltantes, outliers o decisiones de limpieza relevantes.</p>
+        <p class="note reveal" style="--i:5">No se detectaron valores atípicos fuera de rango. Los notebooks de P1–P3 trabajan sobre los 1.743 registros y el de P4 sobre los 1.038 únicos; en la Discusión verificamos que las conclusiones no cambian.</p>
       </section>
 
       <!-- 05 · Metodología -->
-      <section class="slide" data-section="Metodología">
+      <section class="slide slide--dense" data-section="Datos y método">
         <header class="slide__header">
-          <p class="eyebrow reveal" style="--i:0">03 · Metodología</p>
-          <h2 class="reveal" style="--i:1">Del dato crudo al hallazgo</h2>
+          <p class="eyebrow reveal" style="--i:0">02 · Datos y método</p>
+          <h2 class="reveal" style="--i:1">Del dato crudo al argumento: un análisis descriptivo comparativo</h2>
         </header>
         <ol class="pipeline">
-          <li class="reveal" style="--i:2"><span class="step">1</span><h3>Carga</h3><p>Lectura de CSV/XLSX y unificación de formatos.</p></li>
-          <li class="reveal" style="--i:3"><span class="step">2</span><h3>Limpieza</h3><p>Tipos, faltantes, duplicados y valores atípicos.</p></li>
-          <li class="reveal" style="--i:4"><span class="step">3</span><h3>Exploración</h3><p>Estadística descriptiva y visualización.</p></li>
-          <li class="reveal" style="--i:5"><span class="step">4</span><h3>Análisis</h3><p>Comparaciones, correlaciones o modelos.</p></li>
+          <li class="reveal" style="--i:2"><span class="step">1</span><h3>Carga y auditoría</h3><p>Lectura desde el repositorio; tipos, nulos, duplicados y rangos con <code>describe()</code>.</p></li>
+          <li class="reveal" style="--i:3"><span class="step">2</span><h3>Limpieza</h3><p>Se descarta <code>Relationship_Status</code> (no es relevante para las preguntas) y se eliminan los 705 duplicados.</p></li>
+          <li class="reveal" style="--i:4"><span class="step">3</span><h3>Transformaciones</h3><p>Grupos de edad (18–20, 21–22, 23–24) · nivel de desarrollo según ingreso del Banco Mundial · plataformas con &lt; 20 casos en “Otras” · nivel de uso (≤4 h, 4–6 h, &gt;6 h).</p></li>
+          <li class="reveal" style="--i:5"><span class="step">4</span><h3>Análisis</h3><p>Medias y medianas por grupo (<code>groupby</code>, <code>crosstab</code>, <code>pivot_table</code>), correlación de Pearson y visualización.</p></li>
         </ol>
         <p class="tools reveal" style="--i:6">
-          <span>Python</span><span>pandas</span><span>NumPy</span><span>matplotlib</span><span>seaborn</span><span>Jupyter</span>
+          <span>Python</span><span>pandas</span><span>NumPy</span><span>matplotlib</span><span>seaborn</span><span>Jupyter / Colab</span>
         </p>
       </section>
 
       <!-- 06 · Separador -->
-      <section class="slide slide--dark slide--divider" data-section="Resultados">
-        <span class="divider__number reveal" style="--i:0">04</span>
+      <section class="slide slide--dark slide--divider" data-section="Argumentos">
+        <span class="divider__number reveal" style="--i:0">03</span>
         <div>
           <p class="kicker reveal" style="--i:1">Sección</p>
-          <h2 class="reveal" style="--i:2">Resultados</h2>
-          <p class="reveal" style="--i:3">Lo que nos dicen los datos.</p>
+          <h2 class="reveal" style="--i:2">Argumentos</h2>
+          <p class="reveal" style="--i:3">Qué dicen los datos sobre cada una de las cuatro preguntas.</p>
         </div>
       </section>
 
       <!-- 07 · KPIs -->
-      <section class="slide" data-section="Resultados">
+      <section class="slide" data-section="Argumentos">
         <header class="slide__header">
-          <p class="eyebrow reveal" style="--i:0">04 · Resultados</p>
-          <h2 class="reveal" style="--i:1">Indicadores principales</h2>
+          <p class="eyebrow reveal" style="--i:0">03 · Panorama general</p>
+          <h2 class="reveal" style="--i:1">Más horas de uso van de la mano de menos sueño y peor salud mental</h2>
         </header>
         <div class="kpis">
-          <div class="kpi reveal" style="--i:2"><span class="kpi__value">00<small>%</small></span><span class="kpi__label">Indicador uno</span><span class="kpi__delta up">▲ 0,0 pp vs. período base</span></div>
-          <div class="kpi reveal" style="--i:3"><span class="kpi__value">0,0<small>M</small></span><span class="kpi__label">Indicador dos</span><span class="kpi__delta down">▼ 0,0 % interanual</span></div>
-          <div class="kpi reveal" style="--i:4"><span class="kpi__value">000</span><span class="kpi__label">Indicador tres</span><span class="kpi__delta">Sin variación relevante</span></div>
-          <div class="kpi reveal" style="--i:5"><span class="kpi__value">0,00</span><span class="kpi__label">Indicador cuatro</span><span class="kpi__delta up">▲ correlación positiva</span></div>
+          <div class="kpi reveal" style="--i:2"><span class="kpi__value">5,0<small>h</small></span><span class="kpi__label">Uso diario promedio de redes</span><span class="kpi__delta">Mediana 4,8 h · rango 1,5–8,5 h</span></div>
+          <div class="kpi reveal" style="--i:3"><span class="kpi__value">−0,79</span><span class="kpi__label">Correlación uso ↔ sueño</span><span class="kpi__delta down">▼ ≈ 0,65 h menos de sueño por hora de uso</span></div>
+          <div class="kpi reveal" style="--i:4"><span class="kpi__value">−0,82</span><span class="kpi__label">Correlación uso ↔ salud mental</span><span class="kpi__delta down">▼ Asociación negativa fuerte</span></div>
+          <div class="kpi reveal" style="--i:5"><span class="kpi__value">62<small>%</small></span><span class="kpi__label">Declara que las redes afectan su rendimiento</span><span class="kpi__delta down">▲ 647 de 1.038 estudiantes</span></div>
         </div>
+        <p class="note reveal" style="--i:6">Correlaciones de Pearson calculadas sobre los 1.038 estudiantes únicos (−0,79 y −0,81 sobre la base completa). Fuente: elaboración propia en base a los notebooks del TP.</p>
       </section>
 
-      <!-- 08 · Gráfico + lectura -->
-      <section class="slide" data-section="Resultados">
+      <!-- 08 · P1 Sueño -->
+      <section class="slide slide--dense" data-section="P1 · Sueño">
         <header class="slide__header">
-          <p class="eyebrow reveal" style="--i:0">04 · Resultados</p>
-          <h2 class="reveal" style="--i:1">Título que enuncia el hallazgo, no el gráfico</h2>
+          <p class="eyebrow reveal" style="--i:0"><span class="qtag">P1</span>Uso de redes y sueño</p>
+          <h2 class="reveal" style="--i:1">A más horas en redes sociales, menos horas de sueño</h2>
         </header>
-        <div class="split split--wide-left">
+        <div class="split split--wide-left" style="gap:44px">
           <figure class="figure reveal" style="--i:2">
-            <!-- Reemplazar por: <img src="assets/img/figura_01.png" alt="Descripción del gráfico"> -->
-            <div class="figure__placeholder">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg>
-              <span>Insertar figura<br><code>assets/img/figura_01.png</code></span>
-            </div>
-            <figcaption>Figura 1 · Descripción breve. Fuente: elaboración propia en base a …</figcaption>
+            <img src="assets/img/fig01_uso_vs_sueno.png" alt="Diagrama de dispersión entre horas de uso de redes sociales y horas de sueño, con recta de regresión de pendiente negativa">
+            <figcaption><b>Figura 1.</b> Uso diario de redes vs. horas de sueño, con recta de mínimos cuadrados. Fuente: notebook de Juan.</figcaption>
           </figure>
           <aside class="takeaways">
             <h3 class="reveal" style="--i:3">Lectura</h3>
             <ul>
-              <li class="reveal" style="--i:4">Primer hallazgo, con el dato que lo sostiene.</li>
-              <li class="reveal" style="--i:5">Segundo hallazgo o matiz importante.</li>
-              <li class="reveal" style="--i:6">Implicancia para la pregunta de investigación.</li>
+              <li class="reveal" style="--i:4">La nube de puntos desciende de forma nítida: la correlación es <b>r = −0,79</b>.</li>
+              <li class="reveal" style="--i:5">La recta ajustada indica que cada hora adicional de uso se asocia con <b>≈ 39 minutos menos</b> de sueño.</li>
+              <li class="reveal" style="--i:6">Quien usa redes 2 h duerme en torno a 8,7 h; quien las usa 8 h, cerca de 4,8 h.</li>
+            </ul>
+            <p class="answer reveal" style="--i:7"><b>Respuesta P1</b>Sí: existe una asociación negativa fuerte entre uso de redes y horas de sueño.</p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- 09 · P2 Rendimiento (dispersión) -->
+      <section class="slide slide--dense" data-section="P2 · Rendimiento">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0"><span class="qtag">P2</span>Impacto académico</p>
+          <h2 class="reveal" style="--i:1">Los estudiantes con rendimiento afectado se concentran en la zona de mucho uso y poco sueño</h2>
+        </header>
+        <div class="split split--wide-left" style="gap:44px">
+          <figure class="figure reveal" style="--i:2">
+            <img src="assets/img/fig02_dispersion_desempeno.png" alt="Dispersión de uso de redes vs. sueño coloreada según si el estudiante declara rendimiento afectado (naranja) o normal (violeta)">
+            <figcaption><b>Figura 2.</b> Uso vs. sueño según desempeño declarado: afectado (naranja) y normal (violeta). Fuente: notebook de Juan.</figcaption>
+          </figure>
+          <aside class="takeaways">
+            <h3 class="reveal" style="--i:3">Lectura</h3>
+            <ul>
+              <li class="reveal" style="--i:4">Los dos grupos ocupan regiones distintas del plano: los <b>no afectados</b> arriba a la izquierda (poco uso, más sueño).</li>
+              <li class="reveal" style="--i:5">Los <b>afectados</b> se ubican abajo a la derecha, con una zona de transición alrededor de las 4–5 h de uso.</li>
+              <li class="reveal" style="--i:6">Sugiere un mecanismo plausible: <b>uso → menos sueño → peor rendimiento</b>, que los datos no permiten confirmar causalmente.</li>
             </ul>
           </aside>
         </div>
       </section>
 
-      <!-- 09 · Comparación -->
-      <section class="slide" data-section="Discusión">
+      <!-- 10 · P2 Rendimiento (boxplot + tabla) -->
+      <section class="slide slide--dense" data-section="P2 · Rendimiento">
         <header class="slide__header">
-          <p class="eyebrow reveal" style="--i:0">05 · Discusión</p>
-          <h2 class="reveal" style="--i:1">Comparación entre grupos</h2>
+          <p class="eyebrow reveal" style="--i:0"><span class="qtag">P2</span>Impacto académico</p>
+          <h2 class="reveal" style="--i:1">Quienes se sienten afectados usan 1,7 h más de redes y duermen 1,3 h menos</h2>
         </header>
-        <div class="compare">
-          <div class="compare__col reveal" style="--i:2">
-            <h3>Grupo A</h3>
-            <ul><li>Característica observada</li><li>Valor medio / mediana</li><li>Tendencia principal</li></ul>
-          </div>
-          <span class="compare__vs reveal" style="--i:3">vs.</span>
-          <div class="compare__col compare__col--alt reveal" style="--i:4">
-            <h3>Grupo B</h3>
-            <ul><li>Característica observada</li><li>Valor medio / mediana</li><li>Tendencia principal</li></ul>
+        <div class="split" style="grid-template-columns:1.15fr 1fr; gap:40px">
+          <figure class="figure figure--md reveal" style="--i:2">
+            <img src="assets/img/fig03_boxplot_desempeno.png" alt="Boxplots de horas de uso de redes y horas de sueño para estudiantes con desempeño normal y afectado">
+            <figcaption><b>Figura 3.</b> Distribución de uso y sueño según desempeño académico declarado. Fuente: notebook de Juan.</figcaption>
+          </figure>
+          <div>
+            <table class="data-table reveal" style="--i:3">
+              <thead><tr><th>Indicador (media)</th><th>No afectado</th><th>Afectado</th><th>Dif.</th></tr></thead>
+              <tbody>
+                <tr><td>Uso diario (h)</td><td>3,93</td><td>5,68</td><td class="hi">+1,75</td></tr>
+                <tr><td>Sueño (h)</td><td>7,54</td><td>6,22</td><td class="hi">−1,32</td></tr>
+                <tr><td>Salud mental (4–9)</td><td>7,26</td><td>5,57</td><td class="hi">−1,69</td></tr>
+                <tr><td>Estudiantes</td><td>391</td><td>647</td><td></td></tr>
+              </tbody>
+              <caption>Base: 1.038 estudiantes únicos. Elaboración propia.</caption>
+            </table>
+            <p class="answer reveal" style="--i:4; margin-top:22px"><b>Respuesta P2</b>Sí: el rendimiento afectado se asocia con más uso, menos sueño y peor salud mental. Las cajas casi no se superponen en el uso diario (mediana 3,9 h vs. 5,7 h).</p>
           </div>
         </div>
-        <p class="note reveal" style="--i:5"><b>Limitaciones:</b> alcance temporal, representatividad de la muestra, variables no observadas.</p>
       </section>
 
-      <!-- 10 · Conclusiones -->
-      <section class="slide" data-section="Conclusiones">
+      <!-- 11 · P3 Edad -->
+      <section class="slide slide--dense" data-section="P3 · Edad">
         <header class="slide__header">
-          <p class="eyebrow reveal" style="--i:0">06 · Conclusiones</p>
-          <h2 class="reveal" style="--i:1">Qué aprendimos</h2>
+          <p class="eyebrow reveal" style="--i:0"><span class="qtag">P3</span>Diferencias por edad</p>
+          <h2 class="reveal" style="--i:1">Los más jóvenes (18–20) perciben el mayor impacto académico</h2>
         </header>
-        <div class="split">
-          <ol class="conclusions">
-            <li class="reveal" style="--i:2">Conclusión principal que responde a la pregunta.</li>
-            <li class="reveal" style="--i:3">Conclusión secundaria basada en la evidencia.</li>
-            <li class="reveal" style="--i:4">Conclusión sobre el alcance o la robustez.</li>
-          </ol>
-          <div class="next reveal" style="--i:5">
-            <h3>Próximos pasos</h3>
-            <ul>
-              <li>Ampliar el período de análisis</li>
-              <li>Incorporar nuevas fuentes</li>
-              <li>Profundizar con modelos</li>
+        <div class="figs">
+          <figure class="figure figure--tight figure--sm reveal" style="--i:2">
+            <img src="assets/img/fig05_impacto_academico_edad.png" alt="Barras apiladas del porcentaje de estudiantes que declaran afectación académica por grupo de edad">
+            <figcaption><b>Figura 4.</b> Afectación académica percibida por grupo de edad (%). Fuente: notebook de Joaquín.</figcaption>
+          </figure>
+          <figure class="figure figure--tight figure--sm reveal" style="--i:3">
+            <img src="assets/img/fig04_salud_mental_edad.png" alt="Barras del puntaje promedio de salud mental por grupo de edad, levemente creciente con la edad">
+            <figcaption><b>Figura 5.</b> Salud mental promedio por grupo de edad. Fuente: notebook de Joaquín.</figcaption>
+          </figure>
+        </div>
+        <div class="strip">
+          <p class="reveal" style="--i:4"><strong>Gradiente claro en lo académico:</strong> declara afectación el 67% de los de 18–20 años, el 63% de los de 21–22 y solo el 48% de los de 23–24.</p>
+          <p class="reveal" style="--i:5"><strong>Salud mental levemente mejor con la edad:</strong> 6,10 → 6,28 → 6,44. La diferencia es pequeña y el eje desde cero la atenúa visualmente.</p>
+          <p class="reveal" style="--i:6"><strong>Uso casi igual:</strong> 5,1 h, 4,9 h y 4,8 h. El grupo 23–24 tiene solo 208 casos (148 únicos), por lo que su estimación es menos estable.</p>
+        </div>
+      </section>
+
+      <!-- 12 · P3 Edad (distribución) -->
+      <section class="slide slide--dense" data-section="P3 · Edad">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0"><span class="qtag">P3</span>Diferencias por edad</p>
+          <h2 class="reveal" style="--i:1">Pero la intensidad de uso es similar en todas las edades</h2>
+        </header>
+        <div class="split split--wide-left" style="gap:44px">
+          <figure class="figure figure--md reveal" style="--i:2">
+            <img src="assets/img/fig06_uso_boxplot_edad.png" alt="Boxplots de horas diarias de uso de redes por grupo de edad, con medianas cercanas a 4,8 horas">
+            <figcaption><b>Figura 6.</b> Distribución del uso diario por grupo de edad. Fuente: notebook de Joaquín.</figcaption>
+          </figure>
+          <div>
+            <table class="data-table reveal" style="--i:3">
+              <thead><tr><th>Grupo</th><th>Uso (h)</th><th>Sueño (h)</th><th>Salud m.</th><th>Afecta</th></tr></thead>
+              <tbody>
+                <tr><td>18–20</td><td>5,09</td><td>6,68</td><td>6,10</td><td class="hi">67%</td></tr>
+                <tr><td>21–22</td><td>4,91</td><td>6,90</td><td>6,28</td><td>63%</td></tr>
+                <tr><td>23–24</td><td>4,81</td><td>6,75</td><td>6,44</td><td class="lo">48%</td></tr>
+              </tbody>
+              <caption>Medias por grupo. Base completa (n = 1.743).</caption>
+            </table>
+            <p class="answer answer--warn reveal" style="--i:4; margin-top:22px"><b>Respuesta P3 · edad</b>Diferencia moderada: los menores de 21 son el grupo más expuesto, sobre todo en la percepción académica. Las medianas de uso (≈ 4,7–4,9 h) y las cajas se superponen ampliamente.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13 · P3 Desarrollo -->
+      <section class="slide slide--dense" data-section="P3 · Desarrollo">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0"><span class="qtag">P3</span>Nivel de desarrollo del país</p>
+          <h2 class="reveal" style="--i:1">En países en desarrollo se usan más las redes y la salud mental es menor</h2>
+        </header>
+        <div class="figs">
+          <figure class="figure figure--tight figure--sm reveal" style="--i:2">
+            <img src="assets/img/fig07_uso_desarrollo.png" alt="Barras de horas promedio de uso diario de redes: países desarrollados 4,8 h, en desarrollo 5,25 h">
+            <figcaption><b>Figura 7.</b> Uso diario promedio según nivel de desarrollo. Fuente: notebook de Joaquín.</figcaption>
+          </figure>
+          <figure class="figure figure--tight figure--sm reveal" style="--i:3">
+            <img src="assets/img/fig08_salud_mental_desarrollo.png" alt="Barras del puntaje promedio de salud mental: países desarrollados 6,37, en desarrollo 5,94">
+            <figcaption><b>Figura 8.</b> Salud mental promedio según nivel de desarrollo. Fuente: notebook de Joaquín.</figcaption>
+          </figure>
+        </div>
+        <div class="strip">
+          <p class="reveal" style="--i:4"><strong>Clasificación:</strong> “Desarrollado” = ingreso alto según el Banco Mundial (1.103 casos); el resto, “En desarrollo” (638). Vaticano queda sin clasificar.</p>
+          <p class="reveal" style="--i:5"><strong>Uso:</strong> 5,25 h vs. 4,83 h (+0,4 h, +9%) en los países en desarrollo.</p>
+          <p class="reveal" style="--i:6"><strong>Salud mental:</strong> 5,94 vs. 6,37 (−0,43 puntos). Diferencias que se mantienen tras eliminar duplicados.</p>
+        </div>
+      </section>
+
+      <!-- 14 · P3 Desarrollo (sueño + académico) -->
+      <section class="slide slide--dense" data-section="P3 · Desarrollo">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0"><span class="qtag">P3</span>Nivel de desarrollo del país</p>
+          <h2 class="reveal" style="--i:1">…duermen menos y 3 de cada 4 reportan impacto académico</h2>
+        </header>
+        <div class="split split--wide-left" style="gap:44px">
+          <figure class="figure figure--md reveal" style="--i:2">
+            <img src="assets/img/fig09_sueno_desarrollo.png" alt="Boxplots de horas de sueño por nivel de desarrollo: mediana 7,1 h en desarrollados y 6,3 h en desarrollo">
+            <figcaption><b>Figura 9.</b> Distribución de horas de sueño según nivel de desarrollo. Fuente: notebook de Joaquín.</figcaption>
+          </figure>
+          <div>
+            <table class="data-table reveal" style="--i:3">
+              <thead><tr><th>Indicador</th><th>Desarrollado</th><th>En desarrollo</th></tr></thead>
+              <tbody>
+                <tr><td>Uso diario (h)</td><td>4,83</td><td class="hi">5,25</td></tr>
+                <tr><td>Sueño, mediana (h)</td><td>7,1</td><td class="hi">6,3</td></tr>
+                <tr><td>Salud mental</td><td>6,37</td><td class="hi">5,94</td></tr>
+                <tr><td>Afecta rendimiento</td><td>56%</td><td class="hi">74%</td></tr>
+              </tbody>
+              <caption>Base completa (n = 1.741 clasificados). Elaboración propia en base al notebook.</caption>
+            </table>
+            <p class="answer reveal" style="--i:4; margin-top:22px"><b>Respuesta P3 · desarrollo</b>Sí: los estudiantes de países en desarrollo muestran un perfil menos favorable en los cuatro indicadores. Es la diferencia entre grupos más marcada del trabajo.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 15 · P4 Plataformas -->
+      <section class="slide slide--dense" data-section="P4 · Plataforma">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0"><span class="qtag">P4</span>¿Todas las redes impactan igual?</p>
+          <h2 class="reveal" style="--i:1">WhatsApp, TikTok y Snapchat concentran los peores indicadores</h2>
+        </header>
+        <div class="split" style="grid-template-columns:1.4fr 1fr; gap:36px">
+          <figure class="figure figure--md reveal" style="--i:2">
+            <img src="assets/img/fig10_salud_mental_plataforma.png" alt="Barras de salud mental promedio por plataforma, ordenadas de WhatsApp (5,54) a Otras (6,84), con n de cada grupo">
+            <figcaption><b>Figura 10.</b> Salud mental promedio según plataforma más usada (n = estudiantes). Fuente: notebook de Mateo.</figcaption>
+          </figure>
+          <div>
+            <table class="data-table reveal" style="--i:3; font-size:14px">
+              <thead><tr><th>Plataforma</th><th>Uso</th><th>Sueño</th><th>S. mental</th><th>Afecta</th></tr></thead>
+              <tbody>
+                <tr><td>WhatsApp</td><td class="hi">6,48</td><td class="hi">5,87</td><td class="hi">5,54</td><td class="hi">100%</td></tr>
+                <tr><td>TikTok</td><td>5,38</td><td>6,32</td><td>5,77</td><td>85%</td></tr>
+                <tr><td>Snapchat</td><td>5,54</td><td>6,01</td><td>5,81</td><td>77%</td></tr>
+                <tr><td>Instagram</td><td>4,88</td><td>6,96</td><td>6,15</td><td>65%</td></tr>
+                <tr><td>Facebook</td><td>4,83</td><td>7,08</td><td>6,51</td><td>41%</td></tr>
+                <tr><td>LinkedIn</td><td class="lo">4,23</td><td>6,82</td><td>6,77</td><td class="lo">33%</td></tr>
+                <tr><td>Otras</td><td>4,34</td><td class="lo">7,61</td><td class="lo">6,84</td><td>39%</td></tr>
+              </tbody>
+              <caption>Selección de plataformas. Base: 1.038 estudiantes únicos.</caption>
+            </table>
+          </div>
+        </div>
+        <p class="note reveal" style="--i:4">Brecha de 1,3 puntos de salud mental entre extremos. Hipótesis: las redes de mensajería y video corto, de uso continuo, acumulan más horas de pantalla que las de uso puntual (LinkedIn, Twitter).</p>
+      </section>
+
+      <!-- 16 · P4 Horas vs plataforma -->
+      <section class="slide slide--dense" data-section="P4 · Plataforma">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0"><span class="qtag">P4</span>¿Plataforma u horas de uso?</p>
+          <h2 class="reveal" style="--i:1">Gran parte de la diferencia entre redes se explica por las horas de uso</h2>
+        </header>
+        <div class="split" style="grid-template-columns:1.25fr 1fr; gap:36px">
+          <figure class="figure figure--md reveal" style="--i:2">
+            <img src="assets/img/fig11_uso_salud_plataforma.png" alt="Dispersión por plataforma de horas de uso promedio vs. salud mental promedio, con tendencia descendente de LinkedIn y Otras a WhatsApp">
+            <figcaption><b>Figura 11.</b> Horas de uso y salud mental promedio, por plataforma. Fuente: notebook de Mateo.</figcaption>
+          </figure>
+          <div>
+            <p class="subhead reveal" style="--i:3">Control por nivel de uso · salud mental</p>
+            <table class="data-table reveal" style="--i:4; font-size:14px">
+              <thead><tr><th>Plataforma</th><th>≤4 h</th><th>4–6 h</th><th>&gt;6 h</th></tr></thead>
+              <tbody>
+                <tr><td>Facebook</td><td>7,64</td><td>6,63</td><td>4,86</td></tr>
+                <tr><td>Twitter</td><td>7,49</td><td class="lo">6,72</td><td>5,05</td></tr>
+                <tr><td>TikTok</td><td>7,11</td><td class="hi">5,89</td><td>4,87</td></tr>
+                <tr><td>Snapchat</td><td>7,43</td><td class="hi">5,87</td><td>4,99</td></tr>
+                <tr><td><b>Total</b></td><td><b>7,51</b></td><td><b>6,16</b></td><td><b>4,93</b></td></tr>
+              </tbody>
+              <caption>Pivot plataforma × nivel de uso (selección). Base: 1.038.</caption>
+            </table>
+            <p class="answer answer--warn reveal" style="--i:5; margin-top:16px"><b>Respuesta P4 · plataformas</b>Sí, pero con matices: entre usuarios con horas similares la brecha baja de 1,3 a 0,7–0,9 puntos. Las horas pesan más que la red elegida.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 17 · P4 Género -->
+      <section class="slide slide--dense" data-section="P4 · Género">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0"><span class="qtag">P4</span>Brecha de género</p>
+          <h2 class="reveal" style="--i:1">No hay brecha de género relevante: mujeres y varones se distribuyen igual</h2>
+        </header>
+        <div class="split split--wide-left" style="gap:40px">
+          <figure class="figure figure--md reveal" style="--i:2">
+            <img src="assets/img/fig12_salud_mental_genero.png" alt="Histograma comparativo del puntaje de salud mental de varones y mujeres, con distribuciones similares entre 4 y 9">
+            <figcaption><b>Figura 12.</b> Distribución del puntaje de salud mental según género. Fuente: notebook de Mateo.</figcaption>
+          </figure>
+          <div>
+            <table class="data-table reveal" style="--i:3">
+              <thead><tr><th>Indicador</th><th>Mujeres</th><th>Varones</th></tr></thead>
+              <tbody>
+                <tr><td>Uso diario (h)</td><td>5,08</td><td>4,96</td></tr>
+                <tr><td>Sueño (h)</td><td>6,68</td><td>6,76</td></tr>
+                <tr><td>Salud mental (media)</td><td>6,15</td><td>6,25</td></tr>
+                <tr><td>Salud mental (mediana)</td><td>6,0</td><td>6,0</td></tr>
+                <tr><td>Afecta rendimiento</td><td>63%</td><td>62%</td></tr>
+              </tbody>
+              <caption>n = 507 mujeres y 531 varones.</caption>
+            </table>
+            <p class="answer reveal" style="--i:4; margin-top:18px"><b>Respuesta P4 · género</b>No: la diferencia en salud mental es de 0,10 puntos, con la misma mediana. Dentro de cada plataforma la brecha es ≤ 0,42 y cambia de signo. El género sí incide en <i>qué</i> red se usa (Instagram: 64% mujeres; WhatsApp: 80% varones).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 18 · Separador Discusión -->
+      <section class="slide slide--dark slide--divider" data-section="Discusión">
+        <span class="divider__number reveal" style="--i:0">04</span>
+        <div>
+          <p class="kicker reveal" style="--i:1">Sección</p>
+          <h2 class="reveal" style="--i:2">Discusión</h2>
+          <p class="reveal" style="--i:3">Qué tan sólidas son estas respuestas.</p>
+        </div>
+      </section>
+
+      <!-- 19 · Síntesis -->
+      <section class="slide slide--dense" data-section="Discusión">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0">04 · Discusión</p>
+          <h2 class="reveal" style="--i:1">Un hilo conductor: las horas de uso atraviesan todas las preguntas</h2>
+        </header>
+        <table class="data-table data-table--wide reveal" style="--i:2">
+          <thead><tr><th style="width:22%">Pregunta</th><th>Evidencia principal</th><th style="width:15%">Respuesta</th></tr></thead>
+          <tbody>
+            <tr><td><b>P1</b> · Sueño</td><td>r = −0,79 entre uso y sueño; ≈ 39 min menos de sueño por hora de uso (Fig. 1).</td><td class="hi">Sí, fuerte</td></tr>
+            <tr><td><b>P2</b> · Rendimiento</td><td>Afectados: +1,75 h de uso, −1,3 h de sueño, −1,7 puntos de salud mental (Fig. 2–3).</td><td class="hi">Sí, fuerte</td></tr>
+            <tr><td><b>P3</b> · Edad</td><td>Afectación académica 67% (18–20) vs. 48% (23–24); uso y salud mental casi iguales (Fig. 4–6).</td><td>Moderada</td></tr>
+            <tr><td><b>P3</b> · Desarrollo</td><td>En desarrollo: +0,4 h de uso, −0,8 h de sueño (mediana), −0,43 de salud mental, 74% vs. 56% afectados (Fig. 7–9).</td><td class="hi">Sí</td></tr>
+            <tr><td><b>P4</b> · Plataforma</td><td>Brecha de 1,3 puntos que se reduce a 0,7–0,9 al controlar por horas de uso (Fig. 10–11).</td><td>Sí, parcial</td></tr>
+            <tr><td><b>P4</b> · Género</td><td>Diferencia de 0,10 puntos en salud mental, misma mediana, misma afectación (Fig. 12).</td><td class="lo">No</td></tr>
+          </tbody>
+        </table>
+        <p class="note reveal" style="--i:3">Los grupos más afectados (países en desarrollo, usuarios de WhatsApp/TikTok/Snapchat, estudiantes jóvenes) son también los que más horas pasan en redes: el tiempo de uso funciona como posible <b>variable mediadora o de confusión</b> común.</p>
+      </section>
+
+      <!-- 20 · Robustez y limitaciones -->
+      <section class="slide slide--dense" data-section="Discusión">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0">04 · Discusión</p>
+          <h2 class="reveal" style="--i:1">Los resultados son robustos a la limpieza, pero son asociaciones, no causas</h2>
+        </header>
+        <div class="split" style="gap:44px">
+          <div>
+            <p class="subhead reveal" style="--i:2">Prueba de robustez · ¿cambia algo sin duplicados?</p>
+            <table class="data-table reveal" style="--i:3; font-size:14px">
+              <thead><tr><th>Resultado</th><th>n = 1.743</th><th>n = 1.038</th></tr></thead>
+              <tbody>
+                <tr><td>r uso ↔ sueño</td><td>−0,79</td><td>−0,79</td></tr>
+                <tr><td>r uso ↔ salud mental</td><td>−0,81</td><td>−0,82</td></tr>
+                <tr><td>Uso: en desarrollo vs. desarrollado</td><td>5,25 / 4,83</td><td>5,24 / 4,90</td></tr>
+                <tr><td>Salud mental: en desarrollo vs. desarrollado</td><td>5,94 / 6,37</td><td>5,98 / 6,32</td></tr>
+                <tr><td>Afecta rendimiento: 18–20 vs. 23–24</td><td>67% / 48%</td><td>66% / 48%</td></tr>
+              </tbody>
+              <caption>Elaboración propia: recálculo de los indicadores de los notebooks sobre ambas bases.</caption>
+            </table>
+            <p class="reveal" style="--i:4; margin-top:14px; font-size:14.5px; line-height:1.5; color:var(--ink-soft)">Las diferencias por desarrollo superan ampliamente el error de muestreo (estadístico t de Welch de 3,6 a 5,7 en valor absoluto); la de género no (t ≈ 1,4).</p>
+          </div>
+          <div>
+            <p class="subhead reveal" style="--i:3">Limitaciones</p>
+            <ul class="limits">
+              <li class="reveal" style="--i:4"><b>Diseño transversal y descriptivo:</b> no permite distinguir si el uso reduce el sueño o si quien duerme mal usa más redes.</li>
+              <li class="reveal" style="--i:5"><b>Datos autorreportados</b> y muestra no probabilística de Kaggle: los resultados no se extrapolan a la población estudiantil.</li>
+              <li class="reveal" style="--i:6"><b>Grupos desbalanceados:</b> 23–24 años (148 únicos) y WhatsApp (54) tienen estimaciones menos estables.</li>
+              <li class="reveal" style="--i:7"><b>Desarrollo = ingreso:</b> la clasificación del Banco Mundial simplifica un concepto multidimensional.</li>
+              <li class="reveal" style="--i:8"><b>Autoselección:</b> quienes eligen TikTok o Snapchat pueden diferir de antemano de quienes eligen LinkedIn.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- 11 · Cierre -->
+      <!-- 21 · Conclusiones -->
+      <section class="slide slide--dense" data-section="Conclusiones">
+        <header class="slide__header">
+          <p class="eyebrow reveal" style="--i:0">05 · Conclusiones</p>
+          <h2 class="reveal" style="--i:1">El impacto existe, se concentra en quienes más usan y no es igual para todos</h2>
+        </header>
+        <div class="split" style="grid-template-columns:1.45fr 1fr; gap:48px">
+          <ol class="conclusions" style="gap:16px">
+            <li class="reveal" style="--i:2; font-size:18px"><span>El uso intensivo de redes se asocia fuertemente con <b>menos sueño</b> y <b>peor salud mental</b> (r ≈ −0,8).</span></li>
+            <li class="reveal" style="--i:3; font-size:18px"><span>El <b>62%</b> de los estudiantes percibe un impacto académico; ese grupo usa más redes y duerme menos.</span></li>
+            <li class="reveal" style="--i:4; font-size:18px"><span>El impacto <b>no es igual para todos</b>: es mayor en países en desarrollo y, en lo académico, entre los más jóvenes.</span></li>
+            <li class="reveal" style="--i:5; font-size:18px"><span>Importa más <b>cuánto</b> se usa que <b>qué red</b> se usa; el género no marca diferencias relevantes.</span></li>
+          </ol>
+          <div class="next reveal" style="--i:6">
+            <h3>Próximos pasos</h3>
+            <ul>
+              <li>Contrastes formales (t de Welch, χ², ANOVA) con intervalos de confianza</li>
+              <li>Regresión múltiple: efecto de plataforma, edad y país controlando por horas de uso</li>
+              <li>Usar el IDH (dataset ya disponible) como medida continua de desarrollo</li>
+              <li>Datos longitudinales para aproximar causalidad</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 22 · Cierre -->
       <section class="slide slide--dark slide--end" data-section="Cierre">
         <div class="cover__grid" aria-hidden="true"></div>
         <p class="kicker reveal" style="--i:0">Muchas gracias</p>
