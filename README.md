@@ -63,6 +63,8 @@ python -m http.server -d docs 8000
 Deploy: en GitHub ir a **Settings → Pages → Source: GitHub Actions**. Cada push a `main`
 que modifique `docs/` publica la presentación automáticamente.
 
+Versión PDF: [`docs/presentacion.pdf`](docs/presentacion.pdf) (regenerarla con `P` → *Guardar como PDF*, sin márgenes y con gráficos de fondo).
+
 Atajos: `→` / `Espacio` avanzar · `←` retroceder · `Inicio` / `Fin` · `F` pantalla completa · `P` exportar a PDF (imprimir).
 
 Esto una demostración --

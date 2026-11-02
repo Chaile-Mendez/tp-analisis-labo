@@ -120,6 +120,14 @@
     document.addEventListener(ev, wake, { passive: true })
   );
 
+  /* ---- Pie de página con número de diapositiva (visible también en el PDF) ---- */
+  slides.forEach((slide, i) => {
+    const f = document.createElement("footer");
+    f.className = "slide__footer";
+    f.innerHTML = `<span>Juan · Joaquín · Mateo</span><span>Redes sociales y estudiantes · FCE–UBA</span><span>${i + 1} / ${total}</span>`;
+    slide.appendChild(f);
+  });
+
   /* ---- Inicio ---- */
   ui.total.textContent = pad(total);
   fit();

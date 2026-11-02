@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2314294d'/><rect x='7' y='17' width='4' height='8' rx='1' fill='%23e3a72f'/><rect x='14' y='11' width='4' height='14' rx='1' fill='%23fff'/><rect x='21' y='7' width='4' height='18' rx='1' fill='%23fff'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -16,7 +16,6 @@
   <!-- ============================================================
        Cada <section class="slide"> es una diapositiva.
        - data-section: nombre que aparece en el pie.
-       - class "slide--dark": fondo oscuro (portada, separadores, cierre).
        - class "slide--dense": encabezado compacto para slides con figura + tabla.
        - class "reveal" + style="--i:n": animación escalonada al entrar.
        Figuras: exportadas de los notebooks en /notebooks → assets/img/.
@@ -26,30 +25,17 @@
     <div class="deck" id="deck">
 
       <!-- 01 · Portada -->
-      <section class="slide slide--dark slide--cover" data-section="Portada">
-        <div class="cover__grid" aria-hidden="true"></div>
-        <svg class="cover__chart" viewBox="0 0 600 300" aria-hidden="true">
-          <polyline points="0,40 80,70 160,62 240,120 320,108 400,170 480,160 600,250" />
-          <polyline class="alt" points="0,170 80,180 160,176 240,205 320,200 400,232 480,228 600,270" />
-          <circle cx="600" cy="250" r="6" />
-        </svg>
-
+      <section class="slide slide--cover" data-section="Portada">
         <div class="cover__content">
-          <p class="kicker reveal" style="--i:0">Trabajo Práctico · Análisis de Datos · 2026</p>
-          <h1 class="cover__title reveal" style="--i:1">Redes sociales y estudiantes:<br><em>¿cuánto cuesta conectarse?</em></h1>
-          <p class="cover__subtitle reveal" style="--i:2">Impacto del uso de redes sociales sobre el sueño, el rendimiento académico y la salud mental de 1.038 estudiantes de 110 países.</p>
-
-          <ul class="team reveal" style="--i:3">
-            <li><span class="avatar">J</span>Juan</li>
-            <li><span class="avatar">J</span>Joaquín</li>
-            <li><span class="avatar">M</span>Mateo</li>
-          </ul>
+          <p class="cover__inst">Universidad de Buenos Aires · Facultad de Ciencias Económicas</p>
+          <p class="cover__course">Laboratorio de Métodos Cuantitativos Aplicados a la Gestión</p>
+          <hr class="cover__rule">
+          <h1 class="cover__title">Redes sociales y estudiantes:<br><em>¿cuánto cuesta conectarse?</em></h1>
+          <p class="cover__subtitle">Impacto del uso de redes sociales sobre el sueño, el rendimiento académico y la salud mental de 1.038 estudiantes de 110 países</p>
+          <hr class="cover__rule">
+          <p class="cover__authors">Juan · Joaquín · Mateo</p>
+          <p class="cover__meta">Trabajo Práctico de Análisis de Datos · Buenos Aires, 2026</p>
         </div>
-
-        <footer class="cover__footer reveal" style="--i:4">
-          <span>Facultad de Ciencias Económicas · UBA</span>
-          <span>Laboratorio de Métodos Cuantitativos Aplicados a la Gestión</span>
-        </footer>
       </section>
 
       <!-- 02 · Agenda -->
@@ -152,7 +138,7 @@
       </section>
 
       <!-- 06 · Separador -->
-      <section class="slide slide--dark slide--divider" data-section="Argumentos">
+      <section class="slide slide--divider" data-section="Argumentos">
         <span class="divider__number reveal" style="--i:0">03</span>
         <div>
           <p class="kicker reveal" style="--i:1">Sección</p>
@@ -169,9 +155,9 @@
         </header>
         <div class="kpis">
           <div class="kpi reveal" style="--i:2"><span class="kpi__value">5,0<small>h</small></span><span class="kpi__label">Uso diario promedio de redes</span><span class="kpi__delta">Mediana 4,8 h · rango 1,5–8,5 h</span></div>
-          <div class="kpi reveal" style="--i:3"><span class="kpi__value">−0,79</span><span class="kpi__label">Correlación uso ↔ sueño</span><span class="kpi__delta down">▼ ≈ 0,65 h menos de sueño por hora de uso</span></div>
-          <div class="kpi reveal" style="--i:4"><span class="kpi__value">−0,82</span><span class="kpi__label">Correlación uso ↔ salud mental</span><span class="kpi__delta down">▼ Asociación negativa fuerte</span></div>
-          <div class="kpi reveal" style="--i:5"><span class="kpi__value">62<small>%</small></span><span class="kpi__label">Declara que las redes afectan su rendimiento</span><span class="kpi__delta down">▲ 647 de 1.038 estudiantes</span></div>
+          <div class="kpi reveal" style="--i:3"><span class="kpi__value">−0,79</span><span class="kpi__label">Correlación uso ↔ sueño</span><span class="kpi__delta down">≈ 0,65 h menos de sueño por hora de uso</span></div>
+          <div class="kpi reveal" style="--i:4"><span class="kpi__value">−0,82</span><span class="kpi__label">Correlación uso ↔ salud mental</span><span class="kpi__delta down">Asociación negativa fuerte</span></div>
+          <div class="kpi reveal" style="--i:5"><span class="kpi__value">62<small>%</small></span><span class="kpi__label">Declara que las redes afectan su rendimiento</span><span class="kpi__delta">647 de 1.038 estudiantes</span></div>
         </div>
         <p class="note reveal" style="--i:6">Correlaciones de Pearson calculadas sobre los 1.038 estudiantes únicos (−0,79 y −0,81 sobre la base completa). Fuente: elaboración propia en base a los notebooks del TP.</p>
       </section>
@@ -241,7 +227,7 @@
                 <tr><td>Salud mental (4–9)</td><td>7,26</td><td>5,57</td><td class="hi">−1,69</td></tr>
                 <tr><td>Estudiantes</td><td>391</td><td>647</td><td></td></tr>
               </tbody>
-              <caption>Base: 1.038 estudiantes únicos. Elaboración propia.</caption>
+              <caption>Base: 1.038 estudiantes únicos. Elaboración propia. <span class="legend"><span class="hi">Negrita naranja</span>: valor menos favorable · <span class="lo">negrita cursiva azul</span>: más favorable.</span></caption>
             </table>
             <p class="answer reveal" style="--i:4; margin-top:22px"><b>Respuesta P2</b>Sí: el rendimiento afectado se asocia con más uso, menos sueño y peor salud mental. Las cajas casi no se superponen en el uso diario (mediana 3,9 h vs. 5,7 h).</p>
           </div>
@@ -290,7 +276,7 @@
                 <tr><td>21–22</td><td>4,91</td><td>6,90</td><td>6,28</td><td>63%</td></tr>
                 <tr><td>23–24</td><td>4,81</td><td>6,75</td><td>6,44</td><td class="lo">48%</td></tr>
               </tbody>
-              <caption>Medias por grupo. Base completa (n = 1.743).</caption>
+              <caption>Medias por grupo. Base completa (n = 1.743). <span class="legend"><span class="hi">Negrita naranja</span>: valor menos favorable · <span class="lo">negrita cursiva azul</span>: más favorable.</span></caption>
             </table>
             <p class="answer answer--warn reveal" style="--i:4; margin-top:22px"><b>Respuesta P3 · edad</b>Diferencia moderada: los menores de 21 son el grupo más expuesto, sobre todo en la percepción académica. Las medianas de uso (≈ 4,7–4,9 h) y las cajas se superponen ampliamente.</p>
           </div>
@@ -340,7 +326,7 @@
                 <tr><td>Salud mental</td><td>6,37</td><td class="hi">5,94</td></tr>
                 <tr><td>Afecta rendimiento</td><td>56%</td><td class="hi">74%</td></tr>
               </tbody>
-              <caption>Base completa (n = 1.741 clasificados). Elaboración propia en base al notebook.</caption>
+              <caption>Base completa (n = 1.741 clasificados). Elaboración propia en base al notebook. <span class="legend"><span class="hi">Negrita naranja</span>: valor menos favorable · <span class="lo">negrita cursiva azul</span>: más favorable.</span></caption>
             </table>
             <p class="answer reveal" style="--i:4; margin-top:22px"><b>Respuesta P3 · desarrollo</b>Sí: los estudiantes de países en desarrollo muestran un perfil menos favorable en los cuatro indicadores. Es la diferencia entre grupos más marcada del trabajo.</p>
           </div>
@@ -370,7 +356,7 @@
                 <tr><td>LinkedIn</td><td class="lo">4,23</td><td>6,82</td><td>6,77</td><td class="lo">33%</td></tr>
                 <tr><td>Otras</td><td>4,34</td><td class="lo">7,61</td><td class="lo">6,84</td><td>39%</td></tr>
               </tbody>
-              <caption>Selección de plataformas. Base: 1.038 estudiantes únicos.</caption>
+              <caption>Selección de plataformas. Base: 1.038 estudiantes únicos. <span class="legend"><span class="hi">Negrita naranja</span>: valor menos favorable · <span class="lo">negrita cursiva azul</span>: más favorable.</span></caption>
             </table>
           </div>
         </div>
@@ -399,7 +385,7 @@
                 <tr><td>Snapchat</td><td>7,43</td><td class="hi">5,87</td><td>4,99</td></tr>
                 <tr><td><b>Total</b></td><td><b>7,51</b></td><td><b>6,16</b></td><td><b>4,93</b></td></tr>
               </tbody>
-              <caption>Pivot plataforma × nivel de uso (selección). Base: 1.038.</caption>
+              <caption>Pivot plataforma × nivel de uso (selección). Base: 1.038. <span class="legend"><span class="hi">Negrita naranja</span>: valor menos favorable · <span class="lo">negrita cursiva azul</span>: más favorable.</span></caption>
             </table>
             <p class="answer answer--warn reveal" style="--i:5; margin-top:16px"><b>Respuesta P4 · plataformas</b>Sí, pero con matices: entre usuarios con horas similares la brecha baja de 1,3 a 0,7–0,9 puntos. Las horas pesan más que la red elegida.</p>
           </div>
@@ -435,7 +421,7 @@
       </section>
 
       <!-- 18 · Separador Discusión -->
-      <section class="slide slide--dark slide--divider" data-section="Discusión">
+      <section class="slide slide--divider" data-section="Discusión">
         <span class="divider__number reveal" style="--i:0">04</span>
         <div>
           <p class="kicker reveal" style="--i:1">Sección</p>
@@ -525,13 +511,10 @@
       </section>
 
       <!-- 22 · Cierre -->
-      <section class="slide slide--dark slide--end" data-section="Cierre">
-        <div class="cover__grid" aria-hidden="true"></div>
-        <p class="kicker reveal" style="--i:0">Muchas gracias</p>
-        <h2 class="reveal" style="--i:1">¿Preguntas?</h2>
-        <p class="end__links reveal" style="--i:2">
-          <a href="https://github.com/chaile-mendez/tp-analisis-labo" target="_blank" rel="noopener">github.com/chaile-mendez/tp-analisis-labo</a>
-        </p>
+      <section class="slide slide--end" data-section="Cierre">
+        <p class="kicker">Muchas gracias</p>
+        <h2>¿Preguntas?</h2>
+        <p class="end__links">Repositorio del trabajo: <a href="https://github.com/chaile-mendez/tp-analisis-labo" target="_blank" rel="noopener">github.com/chaile-mendez/tp-analisis-labo</a></p>
       </section>
 
     </div>
