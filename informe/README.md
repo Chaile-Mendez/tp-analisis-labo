@@ -1,6 +1,6 @@
 # Informe (LaTeX)
 
-- `secciones/` — un archivo `.tex` por sección, para trabajar en paralelo sin conflictos.
+- `main.tex` — informe completo en un único archivo LaTeX (portada, secciones y bibliografía).
 - `figuras/` — imágenes usadas en el documento (exportadas desde `outputs/figures/`).
 
 Compilación sugerida (genera el PDF en esta carpeta):
