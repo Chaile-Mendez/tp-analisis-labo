@@ -1,0 +1,84 @@
+% =====================================================================
+%  Informe académico — Trabajo Práctico Grupal
+%  Laboratorio de Métodos Cuantitativos Aplicados a la Gestión · FCE UBA
+%  Compilar con pdfLaTeX (Overleaf o: latexmk -pdf -cd informe/main.tex)
+% =====================================================================
+\documentclass[10pt,a4paper]{article}
+
+% ---------- Idioma y codificación ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla,es-noshorthands]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% ---------- Página ----------
+\usepackage[a4paper,top=2.2cm,bottom=2.2cm,left=2.4cm,right=2.4cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\setstretch{1.05}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+
+% ---------- Tablas, figuras y color ----------
+\usepackage{graphicx}
+\graphicspath{{figuras/}}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage[font=small,labelfont=bf,skip=4pt]{caption}
+\usepackage{subcaption}
+\usepackage[table]{xcolor}
+\definecolor{azul}{HTML}{2A78D6}
+\definecolor{naranja}{HTML}{EB6834}
+\definecolor{gristexto}{HTML}{555555}
+\definecolor{fondocaja}{HTML}{F3F6FB}
+
+% ---------- Listas y títulos ----------
+\usepackage{enumitem}
+\setlist{itemsep=2pt,topsep=3pt,leftmargin=1.4em}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\color{azul!70!black}}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.0em}{0.4em}
+\titlespacing*{\subsection}{0pt}{0.7em}{0.25em}
+
+% ---------- Recuadro de hallazgo ----------
+\usepackage[most]{tcolorbox}
+\newtcolorbox{hallazgo}{colback=fondocaja,colframe=azul,boxrule=0pt,leftrule=2.5pt,
+  arc=0pt,left=6pt,right=6pt,top=3pt,bottom=3pt,before skip=6pt,after skip=6pt}
+
+% ---------- Enlaces ----------
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+% ---------- Encabezado y pie ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{gristexto}Laboratorio de Métodos Cuantitativos · FCE UBA}
+\fancyhead[R]{\small\color{gristexto}Impacto de las redes sociales en los estudiantes}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ---------- Datos editables de la portada ----------
+\newcommand{\repositorio}{\url{https://github.com/Chaile-Mendez/tp-analisis-labo}}
+\newcommand{\overleaf}{[Link al proyecto de Overleaf]}
+
+\begin{document}
+
+% =====================================================================
+\input{secciones/00_portada}
+% =====================================================================
+
+\input{secciones/01_resumen}
+\input{secciones/02_introduccion}
+\input{secciones/03_datos_metodologia}
+\input{secciones/04_resultados}
+\input{secciones/05_conclusiones}
+\input{secciones/06_reflexion}
+\input{secciones/07_bibliografia}
+
+\end{document}
