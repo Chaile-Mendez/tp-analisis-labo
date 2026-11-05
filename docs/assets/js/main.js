@@ -1,6 +1,6 @@
 /* =============================================================
    Motor de diapositivas mínimo, sin dependencias.
-   Teclado: ← → Espacio RePág AvPág Inicio Fin · F pantalla completa · P imprimir
+   Teclado: ← → Espacio RePág AvPág Inicio Fin · F pantalla completa · N notas · P imprimir
    URL: #3 abre directamente la diapositiva 3.
    ============================================================= */
 (() => {
@@ -13,6 +13,9 @@
     prev: $("prev"),
     next: $("next"),
     fullscreen: $("fullscreen"),
+    notes: $("notes"),
+    notesPanel: $("notes-panel"),
+    notesText: $("notes-text"),
     current: $("current"),
     total: $("total"),
     section: $("hud-section"),
@@ -51,7 +54,20 @@
     ui.prev.disabled = index === 0;
     ui.next.disabled = index === total - 1;
 
+    renderNotes();
+
     if (updateHash) history.replaceState(null, "", `#${index + 1}`);
+  }
+
+  /* ---- Notas del orador (guion de cada diapositiva) ---- */
+  function renderNotes() {
+    const aside = slides[index].querySelector(".notes");
+    ui.notesText.textContent = aside ? aside.textContent.trim().replace(/\s+/g, " ") : "Sin notas para esta diapositiva.";
+  }
+
+  function toggleNotes() {
+    ui.notesPanel.hidden = !ui.notesPanel.hidden;
+    ui.notes.setAttribute("aria-pressed", String(!ui.notesPanel.hidden));
   }
 
   const next = () => go(index + 1);
@@ -87,6 +103,8 @@
       case "End": go(total - 1); break;
       case "f":
       case "F": toggleFullscreen(); break;
+      case "n":
+      case "N": toggleNotes(); break;
       case "p":
       case "P": window.print(); break;
     }
@@ -95,6 +113,7 @@
   ui.next.addEventListener("click", next);
   ui.prev.addEventListener("click", prev);
   ui.fullscreen.addEventListener("click", toggleFullscreen);
+  ui.notes.addEventListener("click", toggleNotes);
 
   // Gestos táctiles (deslizar horizontalmente)
   let touchX = null;
